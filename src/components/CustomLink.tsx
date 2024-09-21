@@ -6,7 +6,7 @@ interface Props{
     url?: String
 }
 
-export function Link( {text, url}: Props) {
+export function CustomLink( {text, url}: Props) {
     return (
         <Pressable style={styles.link}>
             <Text style={styles.text}>{text}</Text>

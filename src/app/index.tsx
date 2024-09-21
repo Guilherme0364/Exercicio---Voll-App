@@ -1,8 +1,9 @@
 import { Text, View, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { Link } from "expo-router"
 import { Title } from "../components/Title";
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
-import { Link } from "../components/Link";
+import { CustomLink } from "../components/CustomLink";
 
 export default function Index() {
 	return (
@@ -25,17 +26,18 @@ export default function Index() {
 			/>
 
 			<Button
-				text="Entrar"				
+				text="Entrar"		
+				marginTop={30}		
 			/>
 
-			<Link
+			<CustomLink
 				text={"Esqueceu a senha?"}
 			/>
 
 			<View style={styles.register}>
 				<Text>Ainda não tem cadastro?</Text>
 				<TouchableOpacity>
-					<Text style={styles.textRegister}> Faça seu cadastro</Text>
+					<Link href={"/Register"} style={styles.textRegister}> Faça seu cadastro</Link>
 				</TouchableOpacity>
 			</View>
 		</View>
