@@ -86,7 +86,10 @@ const styles = StyleSheet.create({
 		display: 'flex',
 		flexDirection: "column",
 		flex: 1, // Ocupa a tela inteira		
-		backgroundColor: '#fff',				
+		backgroundColor: '#fff',	
+		marginLeft: 10,
+		marginRight: 10,
+		marginTop: 12			
 	},
 	image: {
 		marginBottom: 40,
@@ -95,7 +98,7 @@ const styles = StyleSheet.create({
 	},
 	planText:{
 		color: "#0B3B60",
-		fontWeight: 700,
+		fontWeight: '700',
 		fontSize: 17,
 		alignSelf: "flex-start",
 		marginTop: 15,

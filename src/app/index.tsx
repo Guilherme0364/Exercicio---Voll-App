@@ -1,4 +1,4 @@
-import { Text, View, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, View, Image, StyleSheet, Pressable } from "react-native";
 import { Link } from "expo-router"
 import { Title } from "../components/Title";
 import { Input } from "../components/Input";
@@ -25,10 +25,12 @@ export default function Index() {
 				placeholder={"Insira sua senha:"}
 			/>
 
-			<Button
-				text="Entrar"		
-				marginTop={30}		
-			/>
+			<Link href={"/(tabs)/Main"} asChild> 			
+				<Button
+					text="Entrar"		
+					marginTop={30}					
+				/>
+			</Link>
 
 			<CustomLink
 				text={"Esqueceu a senha?"}
@@ -36,9 +38,9 @@ export default function Index() {
 
 			<View style={styles.register}>
 				<Text>Ainda não tem cadastro?</Text>
-				<TouchableOpacity>
+				<Pressable>
 					<Link href={"/Register"} style={styles.textRegister}> Faça seu cadastro</Link>
-				</TouchableOpacity>
+				</Pressable>
 			</View>
 		</View>
 	);
@@ -52,7 +54,10 @@ const styles = StyleSheet.create({
 		flex: 1, // Ocupa a tela inteira
 		alignItems: "center",
 		backgroundColor: '#fff',
-		justifyContent: "center"
+		justifyContent: "center",
+		marginLeft: 10,
+		marginRight: 10,
+		marginTop: 10
 	},
 	image: {
 		marginBottom: 40

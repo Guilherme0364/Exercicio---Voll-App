@@ -6,7 +6,7 @@ interface Props{
 	text: String, 		
 }
 
-export function CustomCheckbox({ text }: Props) {
+export const CustomCheckbox = ({ text }: Props) => {
 
 	const [isChecked, setChecked] = useState(false);
 
@@ -37,6 +37,6 @@ const styles = StyleSheet.create({
 		color: "lightblack",
 		fontSize: 17,
 		marginLeft: 10,		
-		fontWeight: 500
+		fontWeight: '500'
 	}
 })

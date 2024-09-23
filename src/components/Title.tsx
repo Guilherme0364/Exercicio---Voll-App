@@ -5,7 +5,7 @@ interface Props{
     text: String
 }
 
-export function Title({ text }: Props) {
+export const Title = ({ text }: Props) => {
   return (
     <Text style={styles.text}>{text}</Text>
   )

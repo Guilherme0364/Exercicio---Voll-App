@@ -1,5 +1,5 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native'
-import React from 'react'
+import React, { forwardRef } from 'react'
 
 interface Props {
     color?: string; // Valor opcional, por padrão é azul
@@ -9,7 +9,7 @@ interface Props {
 	marginBottom?: number;
 }
 
-export function Button({ color, text, marginTop, marginBottom, onPress }: Props) {
+export const Button = forwardRef<View, Props>(({ color, text, marginTop, marginBottom, onPress }, ref) => {
     return (
         <Pressable 
 			style={[styles.button, {backgroundColor: color}, {marginTop: marginTop}, {marginBottom: marginBottom}]} 
@@ -18,7 +18,7 @@ export function Button({ color, text, marginTop, marginBottom, onPress }: Props)
         	<Text style={styles.buttonText}>{text}</Text>
         </Pressable>
     )
-}
+});
 
 const styles = StyleSheet.create({
 	button: {

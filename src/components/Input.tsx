@@ -6,7 +6,7 @@ interface Props{
     placeholder: String
 }
 
-export function Input({ label, placeholder }: Props) {
+export const Input = ({ label, placeholder }: Props) => {
     return (
         <View style={styles.inputBox}>
             <Text style={styles.label}>{label}</Text>
@@ -20,7 +20,7 @@ export function Input({ label, placeholder }: Props) {
 const styles = StyleSheet.create({
 	label: {
 		fontSize: 15,
-		fontWeight: 500
+		fontWeight: '500'
 	},
 	inputBox: {
 	  marginTop: 20,
@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
 	  shadowOffset: { width: 0, height: 2 },
 	  shadowOpacity: 0.2,
 	  shadowRadius: 3,
-	  elevation: 3, 
+	  elevation: 3,
+	  
 	},
 })
