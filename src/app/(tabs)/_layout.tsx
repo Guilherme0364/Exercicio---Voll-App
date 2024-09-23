@@ -1,50 +1,29 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { TabBarIcon } from '../../components/navigation/TabBarIcon';
+import { tabs } from '@/src/utils/BottomTabs';
+import { screenOptions } from '@/src/utils/ScreenOptions';
+
 
 export default function TabLayout() {
 	return (
 		<Tabs
-			screenOptions={{
-				headerShown: false,
-			}}
+			screenOptions={screenOptions}
 		>
-			<Tabs.Screen
-				name="Main"
-				options={{
-					title: 'Home',
-					tabBarIcon: ({ color, focused }) => (
-						<TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-					),
-				}}
-			/>
-			<Tabs.Screen
-				name="Appointment"
-				options={{
-					title: 'Appointment',
-					tabBarIcon: ({ color, focused }) => (
-						<TabBarIcon name={focused ? 'calendar' : 'calendar-outline'} color={color} />
-					),
-				}}
-			/>
-			<Tabs.Screen
-				name="Explore"
-				options={{
-					title: 'Explore',
-					tabBarIcon: ({ color, focused }) => (
-						<TabBarIcon name={focused ? 'search' : 'search-outline'} color={color} />
-					),
-				}}
-			/>
-			<Tabs.Screen
-				name="Profile"
-				options={{
-					title: 'Profile',
-					tabBarIcon: ({ color, focused }) => (
-						<TabBarIcon name={focused ? 'person' : 'person-outline'} color={color} />
-					),
-				}}
-			/>
+			{tabs.map((tab) => (
+				<Tabs.Screen
+					key={tab.name}
+					name={tab.name}
+					options={{
+						title: `${tab.title}`,
+						tabBarIcon: ({ color, focused }) => (
+							<TabBarIcon name={focused ? `${tab.icon}` : `${tab.focusedIcon}` } color={color} />
+						),
+					}}
+				/>
+			))
+
+			}
 		</Tabs>
 	);
 }
