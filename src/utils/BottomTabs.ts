@@ -1,7 +1,7 @@
 const tabs = [
 	{
 	  name: 'Main',
-	  title: 'Main',
+	  title: 'Home',
 	  icon: 'home' as const, // Aqui você força a string a ser interpretada como válida
 	  focusedIcon: 'home-outline' as const,
 	},
