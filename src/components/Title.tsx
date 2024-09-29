@@ -2,12 +2,14 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
 interface Props{
-    text: String
+    text: string;
+    color?: string
+    fontSize?: number
 }
 
-export const Title = ({ text }: Props) => {
+export const Title = ({ text, color, fontSize }: Props) => {
   return (
-    <Text style={styles.text}>{text}</Text>
+    <Text style={[styles.text, {color: color}, {fontSize: fontSize}]}>{text}</Text>
   )
 }
 
