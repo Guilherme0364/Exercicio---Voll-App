@@ -4,6 +4,7 @@ import { Title } from "../../components/Title";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { CustomCheckbox } from "@/src/components/CustomCheckbox";
+import { ScreenPadding } from "@/src/utils/ScreenPadding";
 import { useState } from "react";
 
 export default function Index() {
@@ -24,7 +25,7 @@ export default function Index() {
 	}
 
 	return (
-		<ScrollView style={styles.container}>
+		<ScrollView style={[styles.screen, ScreenPadding]}>
 
 			<Image source={require('@/src/assets/images/Logo.png')} style={styles.image} />
 
@@ -82,14 +83,11 @@ export default function Index() {
 
 
 const styles = StyleSheet.create({
-	container: {
+	screen: {
 		display: 'flex',
 		flexDirection: "column",
 		flex: 1, // Ocupa a tela inteira		
 		backgroundColor: '#fff',	
-		marginLeft: 10,
-		marginRight: 10,
-		marginTop: 12			
 	},
 	image: {
 		marginBottom: 40,

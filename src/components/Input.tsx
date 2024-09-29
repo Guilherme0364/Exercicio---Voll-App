@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, TextInput } from 'react-native'
 import React from 'react'
 
 interface Props{
-    label: String
+    label?: String
     placeholder: String
 }
 

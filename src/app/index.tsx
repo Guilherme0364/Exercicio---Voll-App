@@ -4,10 +4,11 @@ import { Title } from "../components/Title";
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import { CustomLink } from "../components/CustomLink";
+import { ScreenPadding } from "../utils/ScreenPadding";
 
 export default function Index() {
 	return (
-		<View style={styles.container}>
+		<View style={[styles.screen, ScreenPadding]}>
 
 			<Image source={require('@/src/assets/images/Logo.png')} style={styles.image} />
 
@@ -48,16 +49,13 @@ export default function Index() {
 
 
 const styles = StyleSheet.create({
-	container: {
+	screen: {
 		display: 'flex',
 		flexDirection: "column",
 		flex: 1, // Ocupa a tela inteira
 		alignItems: "center",
 		backgroundColor: '#fff',
 		justifyContent: "center",
-		marginLeft: 10,
-		marginRight: 10,
-		marginTop: 10
 	},
 	image: {
 		marginBottom: 40
