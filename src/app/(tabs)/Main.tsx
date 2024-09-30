@@ -14,7 +14,7 @@ export default function Main() {
 
 			<Title text='Boas-vindas!' textAlign='left' fontSize={26} color='#339CFF' />
 
-			<View style={styles.shadowBox}>
+			<View style={styles.searchBox}>
 				<Input placeholder={'Digite a especialidade'} />
 				<Input placeholder={'Digite sua localização'} />
 				<Button text='Buscar' marginTop={15} />
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
 		marginBottom: 30,
 		marginLeft: 20
 	},
-	shadowBox: {
+	searchBox: {
 		backgroundColor: '#fff',
 		alignSelf: 'center',
 		width: '90%',
