@@ -4,11 +4,13 @@ import React from 'react'
 interface Props {
     source: string
     size: number
+    marginTop?: number;
+	marginBottom?: number;
 }
 
-export const Avatar = ({ source, size }: Props) => {
+export const Avatar = ({ source, size, marginTop, marginBottom }: Props) => {
     return (
-        <View style={[styles.avatarContainer, { width: size, height: size }]}>
+        <View style={[styles.avatarContainer, { width: size, height: size }, { marginTop: marginTop }, { marginBottom: marginBottom }]}>
             <Image
                 source={{ uri: source }}
                 style={[styles.avatar, { width: size, height: size, borderRadius: size / 2 }]}

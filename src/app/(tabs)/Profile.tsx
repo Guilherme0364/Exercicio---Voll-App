@@ -24,8 +24,8 @@ export default function Profile() {
         <Divider />
 
         <Title text='Histórico médico' color='#339CFF' fontSize={22} />
-        <Text>Bronquite</Text>
-        <Text>Sinusite</Text>
+        <Text style={styles.textHistory}>Bronquite</Text>
+        <Text style={styles.textHistory}>Sinusite</Text>
       </View>
     </ScrollView>
   );
@@ -45,6 +45,11 @@ const styles = StyleSheet.create({
   },
   textInfo: {
     fontSize: 15,
+    color: 'grey',
+  },
+  textHistory: {
+    fontSize: 20,
+    fontWeight: 600,
     color: 'grey',
   },
 });

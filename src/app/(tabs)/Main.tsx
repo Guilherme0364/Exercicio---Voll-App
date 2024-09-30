@@ -26,11 +26,11 @@ export default function Main() {
 
 				{Testimony.map(testimony => {
 					return (
-						<>							
+						<View key={testimony.id}>
 							<Text style={styles.testimony}>{testimony.text}</Text>
 							<Title text={`${testimony.autor}`} fontSize={18} />
-							<Divider/>
-						</>
+							<Divider />
+						</View>
 					)
 				})}
 

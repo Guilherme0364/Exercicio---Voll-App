@@ -3,7 +3,7 @@ import { Section } from "@/src/utils/RegisterSection";
 import { Title } from "../../components/Title";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
-import { CustomCheckbox } from "@/src/components/CustomCheckbox";
+import { CustomCheckbox } from "../../components/CustomCheckbox";
 import { ScreenPadding } from "@/src/utils/ScreenPadding";
 import { useState } from "react";
 
