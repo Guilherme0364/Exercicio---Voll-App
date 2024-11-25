@@ -4,15 +4,22 @@ import React from 'react'
 interface Props{
     label?: String
     placeholder: String
+	value?: string
+	secureTextEntry?: boolean 
+	onChangeText?: (text: string) => void
 }
 
-export const Input = ({ label, placeholder }: Props) => {
+export const Input = ({ label, placeholder, value, secureTextEntry, onChangeText }: Props) => {
     return (
         <View style={styles.inputBox}>
             <Text style={styles.label}>{label}</Text>
             <TextInput
                 style={styles.input}
-                placeholder={`${placeholder}`} />
+                placeholder={`${placeholder}`} 
+				value= {value}
+				secureTextEntry = {secureTextEntry}
+				onChangeText={onChangeText}									
+			/>				
         </View>
     )
 }

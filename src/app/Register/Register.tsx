@@ -40,7 +40,7 @@ export default function Index() {
 							label={entry.label}
 							placeholder={entry.placeholder}
 							key={entry.id}
-						/> || []
+						/> 
 					})
 				}
 			</View>
@@ -52,7 +52,7 @@ export default function Index() {
 						return <CustomCheckbox
 							key={checkbox.id}
 							text={checkbox.text}
-						/> || []
+						/> 
 				})}
 			</View>
 

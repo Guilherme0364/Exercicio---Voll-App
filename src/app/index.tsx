@@ -1,12 +1,56 @@
 import { Text, View, Image, StyleSheet, Pressable } from "react-native";
-import { Link } from "expo-router"
+import { Link, router } from "expo-router"
 import { Title } from "../components/Title";
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import { CustomLink } from "../components/CustomLink";
 import { ScreenPadding } from "../utils/ScreenPadding";
+import { signIn } from "../services/authService";
+import { useEffect, useState } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import jwtDecode from 'jwt-decode';
 
 export default function Index() {
+
+	const [email, setEmail] = useState('')
+	const [senha, setSenha] = useState('')
+	const [loading, setLoading] = useState(true)
+
+	useEffect(() => {
+		async function loginAuth(){
+			const token  = await AsyncStorage.getItem('token')
+			if(token){
+				router.replace('/(tabs)/Main')
+			} else{
+				console.log('Não foi encontrado o token')
+			}
+			setLoading(false)
+		}
+		loginAuth()
+	}, [])
+
+	async function login() {
+		const resutlt = await signIn(email, senha)
+		if (resutlt) {
+			const { token } = resutlt
+			AsyncStorage.setItem('token', token)
+			
+			const decodedToken = (jwtDecode as any)(token);
+			const patientId = decodedToken.id
+
+			AsyncStorage.setItem('patientId', patientId)
+
+			router.replace('/(tabs)/Main')
+		} else {
+			console.log('Erro')
+		}
+	}
+
+	// Se está carregando, não exibe a tela de login, e se há o token, já vai direto para o menu
+	if(loading){ 
+		return null
+	}
+
 	return (
 		<View style={[styles.screen, ScreenPadding]}>
 
@@ -19,19 +63,23 @@ export default function Index() {
 			<Input
 				label={"Email"}
 				placeholder={"Insira seu endereço de email:"}
+				value={email}
+				onChangeText={setEmail}
 			/>
 
 			<Input
 				label={"Senha"}
 				placeholder={"Insira sua senha:"}
+				value={senha}
+				onChangeText={setSenha}
+				secureTextEntry
 			/>
 
-			<Link href={"/(tabs)/Main"} asChild> 			
-				<Button
-					text="Entrar"		
-					marginTop={30}					
-				/>
-			</Link>
+			<Button
+				text="Entrar"
+				marginTop={30}
+				onPress={login}
+			/>
 
 			<CustomLink
 				text={"Esqueceu a senha?"}
