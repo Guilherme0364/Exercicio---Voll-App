@@ -5,7 +5,7 @@ interface Props {
     source: string
     size: number
     marginTop?: number;
-	marginBottom?: number;
+    marginBottom?: number;
 }
 
 export const Avatar = ({ source, size, marginTop, marginBottom }: Props) => {
