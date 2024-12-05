@@ -14,7 +14,7 @@ export default function Index() {
 
 	const [email, setEmail] = useState('')
 	const [senha, setSenha] = useState('')
-	const [loading, setLoading] = useState(true)
+	const [loading, setLoading] = useState(true)	
 
 	useEffect(() => {
 		async function loginAuth(){

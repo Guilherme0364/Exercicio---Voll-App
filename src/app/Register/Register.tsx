@@ -10,6 +10,7 @@ import { useState } from "react";
 export default function Index() {
 
 	const [numberSection, setNumberSection] = useState(0)
+	const [data, setData] = useState({} as any)
 
 
 	function sectionAdvance() {
@@ -24,6 +25,10 @@ export default function Index() {
 		}
 	}
 
+	function updateData(id: string, value: string) {
+		setData({ ...data, [id]: value })
+	}
+
 	return (
 		<ScrollView style={[styles.screen, ScreenPadding]}>
 
@@ -36,11 +41,16 @@ export default function Index() {
 			<View style={{ width: "100%" }}>
 				{
 					Section[numberSection].textEntry?.map(entry => { // "?" após o permite o atributo ser opcional (receber undefined)
-						return <Input
-							label={entry.label}
-							placeholder={entry.placeholder}
-							key={entry.id}
-						/> 
+						return (
+							<Input
+								label={entry.label}
+								placeholder={entry.placeholder}
+								key={entry.id}
+								secureTextEntry={entry.secureTextEntry}
+								value={data[entry.name]}
+								onChangeText={(text) => updateData(entry.name, text)}
+							/>
+						)
 					})
 				}
 			</View>
@@ -49,10 +59,10 @@ export default function Index() {
 
 			<View style={{ width: "100%" }}>
 				{Section[numberSection].checkbox?.map(checkbox => { // "?" após o permite o atributo ser opcional (receber undefined)
-						return <CustomCheckbox
-							key={checkbox.id}
-							text={checkbox.text}
-						/> 
+					return <CustomCheckbox
+						key={checkbox.id}
+						text={checkbox.text}
+					/>
 				})}
 			</View>
 

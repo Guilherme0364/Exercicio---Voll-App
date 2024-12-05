@@ -6,22 +6,44 @@ const Section = [
             {
                 id: 1,
                 label: "Nome",
-                placeholder: "Digite seu nome completo:"
+                placeholder: "Digite seu nome completo:",
+                secureTextEntry: false,
+                name: "nome"
             },
             {
                 id: 2,
                 label: "Email",
-                placeholder: "Digite seu email:"
+                placeholder: "Digite seu email:",
+                secureTextEntry: false,
+                name: "email"
             },
             {
                 id: 3,
                 label: "Senha",
-                placeholder: "Digite sua senha:"
+                placeholder: "Digite sua senha:",
+                secureTextEntry: true,
+                name: "senha"        
             },
             {
                 id: 4,
                 label: "Confirme sua senha",
-                placeholder: "Digite sua senha novamente:"
+                placeholder: "Digite sua senha novamente:",
+                secureTextEntry: true,
+                name: "confirmaSenha"
+            },
+            {
+                id: 5,
+                label: "CPF",
+                placeholder: "Digite seu CPF:",
+                secureTextEntry: false,
+                name: "cpf"
+            },
+            {
+                id: 6,
+                label: "Imagem",
+                placeholder: "Coloque sua foto de perfil por link:",
+                secureTextEntry: false,
+                name: "imagem"
             },
         ],
         checkbox: []
@@ -33,27 +55,44 @@ const Section = [
             {
                 id: 1,
                 label: "CEP",
-                placeholder: "Digite seu CEP:"
+                placeholder: "Digite seu CEP:",
+                secureTextEntry: false,
+                name: "cep"
             },
             {
                 id: 2,
-                label: "Endereço",
-                placeholder: "Digite seu endereço:"
+                label: "Rua",
+                placeholder: "Digite sua rua:",
+                secureTextEntry: false,
+                name: "rua"
             },
             {
                 id: 3,
                 label: "Número",
-                placeholder: "Digite seu número:"
+                placeholder: "Digite seu número:",
+                secureTextEntry: false,
+                name: "numero"
             },
             {
                 id: 4,
                 label: "Complemento",
-                placeholder: "Digite o complemento do endereço:"
+                placeholder: "Digite o complemento do endereço:",
+                secureTextEntry: false,
+                name: "complemento"
             },
             {
                 id: 5,
                 label: "Telefone",
-                placeholder: "Digite o seu telefone:"
+                placeholder: "Digite o seu telefone:",
+                secureTextEntry: false,
+                name: "telefone"
+            },
+            {
+                id: 6,
+                label: "Estado",
+                placeholder: "Digite o seu estado:",
+                secureTextEntry: false,
+                name: "estado"
             },
         ],
         checkbox: []
